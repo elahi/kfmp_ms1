@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin/>
+        <pubdate>20040302</pubdate>
+        <pubtime>unknown</pubtime>
+        <title>Coastline, California, 2000</title>
+        <geoform>vector digital data</geoform>
+        <pubinfo>
+          <pubplace/>
+          <publish>California. Department of Fish and Game. Marine Resources Region</publish>
+        </pubinfo>
+        <onlink>http://purl.stanford.edu/vx275xn8886</onlink>
+        <lworkcit>
+          <citeinfo>
+            <pubdate>20000101</pubdate>
+            <title>California Department of Fish and Wildlife GIS Maps and Data</title>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This line shapefile represents the coastline of California. This is a simplified coastline dervied from the Counties, California 2000 (county24k) shapefile. This layer is part of a collection of data created by the California Department of Fish and Game.</abstract>
+      <purpose>This line file is useful for buffering the coast.</purpose>
+      <supplinf>This shapefile does not include islands or rocks along the coast</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>unknown</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-124.506166</westbc>
+        <eastbc>-116.739170</eastbc>
+        <northbc>42.070582</northbc>
+        <southbc>32.500282</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>lcsh</themekt>
+        <themekey>Coasts</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>oceans</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>California</placekey>
+      </place>
+    </keywords>
+    <accconst>This item is in the public domain. There are no restrictions on access or use.</accconst>
+    <useconst>As appropriate to the simplified nature of the line file</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>CA Department of Fish and Game</cntorg>
+          <cntper>Nancy Wright</cntper>
+        </cntorgp>
+        <cntpos>GIS Coordinator</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>20 Lower Ragsdale Dr.</address>
+          <city>Monterey</city>
+          <state>California</state>
+          <postal>93940</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>831.649.2942</cntvoice>
+      </cntinfo>
+    </ptcontac>
+    <datacred>California Department of Fish and Game. Marine Resources Region. (2004). Coastline, California, 2000. California Department of Fish and Game. Available at: http://purl.stanford.edu/vx275xn8886.</datacred>
+    <native>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.3.1.4959</native>
+  </idinfo>
+  <dataqual>
+    <lineage>
+      <procstep>
+        <procdesc>The cstline_simple shapefile was created in Arcview 3.2 by extracting the coastline only from the coast24k shapefile.</procdesc>
+        <procdate>unknown</procdate>
+        <proccont>
+          <cntinfo>
+            <cntorgp>
+              <cntorg>CA DFG</cntorg>
+              <cntper>Nancy Wright</cntper>
+            </cntorgp>
+            <cntpos>GIS Coordinator</cntpos>
+            <cntaddr>
+              <addrtype>mailing and physical</addrtype>
+              <address>20 Lower Ragsdale Dr.</address>
+              <city>Monterey</city>
+              <state>CA</state>
+              <postal>93940</postal>
+              <country>US</country>
+            </cntaddr>
+            <cntvoice>831.649.2942</cntvoice>
+            <cntemail>nmwright@dfg.ca.gov</cntemail>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>String</sdtstype>
+        <ptvctcnt>97</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <eainfo>
+    <detailed xmlns="">
+      <enttyp>
+        <enttypl>cstlne_simple</enttypl>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>FNODE_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>TNODE_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>LPOLY_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>RPOLY_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>LENGTH</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>COUNTY_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>COUNTY_ID</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>LUCODE</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>STATE</attrlabl>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Stanford Geospatial Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>physical</addrtype>
+          <address>Branner Earth Sciences Library</address>
+          <address>Mitchell Building, 2nd Floor</address>
+          <address>397 Panama Mall</address>
+          <city>Stanford</city>
+          <state>California</state>
+          <postal>94305</postal>
+        </cntaddr>
+        <cntvoice>650-723-2746</cntvoice>
+        <cntemail>brannerlibrary@stanford.edu</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>See access and use constraints information.</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20151118</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>CA DFG</cntorg>
+          <cntper>Nancy Wright</cntper>
+        </cntorgp>
+        <cntpos>GIS Coordinator</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>20 Lower Ragsdale Dr.</address>
+          <city>Monterey</city>
+          <state>CA</state>
+          <postal>93940</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>831.649.2942</cntvoice>
+        <cntemail>nmwright@dfg.ca.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+  </metainfo>
+</metadata>
