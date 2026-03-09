@@ -19,12 +19,25 @@ library(ggmap)
 source(here("R", "ggplot_settings.R"))
 
 # Load kfmp transect data
-kfmp_transect_video_metadata_250305
+#kfmp_transect_video_metadata_250305
 
 dat <- read_excel("data/kfmp_transect_video_metadata_251016.xlsx") |> 
-  select(id:depth_m)
+  select(id:depth_m) 
+
+# Subset
+dat <- dat |> 
+  filter(#distance_m > 15, 
+    #year != 2021 & year != 2024, 
+    stratum != "shal") 
 
 glimpse(dat)
+
+dat |> count(site) |> View()
+dat |> count(stratum)
+dat |> count(site_selection, stratum, site) |> print(n = 100)
+dat |> filter(str_detect(site, "hms")) |> 
+  count(site) |> print(n = 100)
+dat |> filter(str_detect(site, "hms"))
 
 ##### WRANGLE KFMP TRANSECT DATA #####
 dat <- dat |>
@@ -37,11 +50,7 @@ dat |> count(stratum)
 dat |> count(year)
 dat |> count(distance_m)
 
-# Subset
-dat <- dat |> 
-  filter(#distance_m > 15, 
-         #year != 2021 & year != 2024, 
-         stratum != "shal") 
+
 
 # Get lat lon bounds
 lat_max <- max(dat$lat)
