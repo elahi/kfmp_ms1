@@ -32,12 +32,17 @@ dat <- dat |>
 
 glimpse(dat)
 
-dat |> count(site) |> View()
+dat |> count(site_selection, site) |> View()
 dat |> count(stratum)
+dat |> count(site_selection)
+dat |> count(site_selection, site) |> count(site_selection)
+  
 dat |> count(site_selection, stratum, site) |> print(n = 100)
 dat |> filter(str_detect(site, "hms")) |> 
   count(site) |> print(n = 100)
 dat |> filter(str_detect(site, "hms"))
+dat |> count(diver1_videoer) |> arrange(desc(n))
+dat |> count(diver2) |> arrange(desc(n))
 
 ##### WRANGLE KFMP TRANSECT DATA #####
 dat <- dat |>
