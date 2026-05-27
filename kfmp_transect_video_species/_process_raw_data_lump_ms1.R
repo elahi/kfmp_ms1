@@ -126,3 +126,30 @@ m
 # Rename
 benthic_meta <- m_meta
 benthic_m <- m
+
+##### MAKE VIDEO x SPECIES MATRIX - COMBINED #####
+d_spp <- dat |> 
+  select(-c(phylum:view)) |> 
+  tibble::column_to_rownames(var = "taxon") %>% # Move 'Type' column to row names
+  t() |> 
+  as.data.frame() |> 
+  tibble::rownames_to_column(var = "video") |> 
+  tibble() 
+
+##### JOIN METADATA WITH NEW MATRIX #####
+
+d <- left_join(dat_meta, d_spp, by = "video")
+
+##### PREP FOR MDS BASED ON RAW DATA MATRIX #####
+
+# Remove numeric columns that contain values >= 0
+d_sub <- d %>%
+  select(where(~ !is.numeric(.) || any(. > 0)))
+
+## Create matrix (species x sample matrix) metadata
+names(d_sub)
+m_meta <- d_sub %>% select(video:sand)
+m <- d_sub %>% select(-c(video:sand))
+m_meta
+m
+
