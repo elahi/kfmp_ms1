@@ -3,21 +3,22 @@
 ##' @author Robin Elahi
 ##' @date 2026-05-27
 ##' @log 
+##' 2026-06-04: cleaned up code and folder structure
 ################################################################################
 
-here::i_am("kfmp_transect_video_species/mds_ms1.R")
+here::i_am("fig_mds/2_plot_mds.R")
 library(here)
 
 # Load processed raw data
-source(here("kfmp_transect_video_species", "_process_raw_data_lump_ms1.R"))
+source(here("fig_mds", "1_process_raw_data_for_mds.R"))
 d # complete processed dataset
 d_sub # only species with at least one observation
 m # species matrix for vegan
 m_meta # metadata
 
 # File paths 
-folder <- "kfmp_transect_video_species"
-file_name <- "mds_ms1"
+folder <- "fig_mds"
+file_name <- "2_plot_mds"
 
 ##### PACKAGES, DATA #####
 library(vegan)

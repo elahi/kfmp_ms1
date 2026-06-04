@@ -1,15 +1,16 @@
 ################################################################################
-##' @title Process raw data, lump to ms1 categories
+##' @title Process raw community data, lump to categories in manuscript
 ##' @author Robin Elahi
 ##' @date 2026-05-26
 ##' @log 
+##' 2026-06-04: cleaned up code and folder structure
 ################################################################################
 
 #### File paths ####
-here::i_am("kfmp_transect_video_species/_process_raw_data_lump_ms1.R")
+here::i_am("fig_mds/1_process_raw_data_for_mds.R")
 library(here)
-folder <- "kfmp_transect_video_species"
-file_name <- "_process_raw_data_lump_ms1.R"
+folder <- "fig_mds"
+file_name <- "1_process_raw_data_for_mds.R"
 
 ##### PACKAGES, DATA #####
 library(tidyverse)
