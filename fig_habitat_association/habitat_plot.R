@@ -62,10 +62,12 @@ ggsave(paste(folder, "/figs/", file_name, "_a.pdf", sep = ""), height = 3.5, wid
 ggsave(paste(folder, "/figs/", file_name, "_a.jpg", sep = ""), height = 3.5, width = 7)
 
 ##### STATISTICAL ANALYSIS #####
-# linear regression for each panel
+# Correlation for each panel
+cor.test(x = small_rock_data$percent_rock, y = small_rock_data$video_macro_individuals)
 summary(lm(small_rock_data$video_macro_individuals 
            ~ small_rock_data$percent_rock)) 
 
+cor.test(x = small_rock_data$percent_rock, y = small_rock_data$video_patiria_min_counts)
 summary(lm(small_rock_data$video_patiria_min_counts 
            ~ small_rock_data$percent_rock)) 
 
