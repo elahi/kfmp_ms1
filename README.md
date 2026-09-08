@@ -2,7 +2,7 @@
 
 This repository contains the data and code to recreate the analyses and figures from:
 
-*Underwater video surveys as a tool for research and education in kelp forest ecology*
+*Kelp beds in classrooms: democratizing underwater video surveys for ocean science education*
 
 Authors: 
 
@@ -12,17 +12,15 @@ Submitted to:
 
 To recreate figures, run the code in the specified folder. 
 
-Figure 1: fig_
+Figure 2: fig_map
 
-Figure 2: fig_
+Figure 3: fig_groundtruth
 
-Figure 3: fig_
+Figure 4: fig_urchin_class_exercise
 
-Figure 4: fig_
+Figure 5: fig_habitat_association
 
-Figure 5: fig_
+Figure S3: fig_stipes
 
-Figure S1: fig_
-
-Figure S2: fig_mds
+Figure S4: fig_mds
 
