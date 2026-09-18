@@ -16,6 +16,7 @@ library(tidyverse)
 library(here)
 library(readxl)
 library(broom)
+library(car)
 
 theme_set(theme_bw(base_size = 10) + 
             theme(panel.grid = element_blank(), 

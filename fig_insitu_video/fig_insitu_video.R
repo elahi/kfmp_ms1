@@ -11,6 +11,7 @@ file_name <- "fig_insitu_video"
 ##-----------------------------------------------------Load libraries----------
 library(tidyverse)
 source(here("R", "ggplot_settings.R"))
+library(car)
 
 ##-----------------------------------------------------Load data set-----------
 ####Notes: only using GZD kelp video count data and JD swath-adjusted Patiria video count data
@@ -32,14 +33,42 @@ df_fig3_select_combined_data <- bind_rows(
   df_select_star_data) %>% 
   drop_na()
 
+df_fig3_select_combined_data |> count(group)
+df_kelp <- df_fig3_select_combined_data |> filter(group == "Macrocystis Stipe Counts")
+df_star <- df_fig3_select_combined_data |> filter(group == "Patiria Counts (Adjusted)")
+
 ##-----------------------------------------------------Stats-------------------
+models <- df_fig3_select_combined_data %>%
+  group_by(group) %>%
+  do(model = lm(video_count ~ insitu_count, data = .))
+
 pullstats <- df_fig3_select_combined_data %>%
   group_by(group) %>%
   do(model = lm(video_count ~ insitu_count, data = .)) %>%
   summarize(group = first(group),
+            slope = summary(model)$coefficients["insitu_count", "Estimate"], 
+            se_slope = summary(model)$coefficients["insitu_count", "Std. Error"], 
+            intercept = summary(model)$coefficients["(Intercept)", "Estimate"], 
+            se_intercept = summary(model)$coefficients["(Intercept)", "Std. Error"], 
             R2 = summary(model)$r.squared,
             p_value = summary(model)$coefficients[2, 4])
 print(pullstats)
+
+# Example with zeros
+x <- c(0, 0, 10, 20, 0, 15)
+y <- c(0, 5, 12, 20, 0, 18)
+m1 <- lm(y ~ x)
+summary(m1)$coefficients
+
+# Does intercept differ from a specific value (e.g., 0)?
+m1 <- lm(video_count ~ insitu_count, data = df_kelp)
+linearHypothesis(m1, "insitu_count = 1")
+linearHypothesis(m1, "(Intercept) = 0")
+
+# Stars
+m1 <- lm(video_count ~ insitu_count, data = df_star)
+linearHypothesis(m1, "insitu_count = 1")
+linearHypothesis(m1, "(Intercept) = 0")
 
 ##-----------------------------------------------------Plot--------------------
 ggplot(df_fig3_select_combined_data, 
