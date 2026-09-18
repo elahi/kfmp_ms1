@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin/>
+        <pubdate>19980801</pubdate>
+        <title>Coastline Coverage of Monterey Bay, Monterey Harbor, Moss Landing Harbor, Santa Cruz, and Small Craft Harbor, California, 1992</title>
+        <geoform>vector digital data</geoform>
+        <serinfo>
+          <sername>MBARI digital data series</sername>
+          <issue>No. 1</issue>
+        </serinfo>
+        <pubinfo>
+          <pubplace/>
+          <publish>Monterey Bay Aquarium Research Institute</publish>
+        </pubinfo>
+        <onlink>http://purl.stanford.edu/fm370qz5085</onlink>
+        <onlink>http://purl.stanford.edu/fm370qz5085</onlink>
+        <onlink>http://purl.stanford.edu/fm370qz5085</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin/>
+            <origin/>
+            <pubdate>19980801</pubdate>
+            <title>GIS Data of the Monterey Bay</title>
+            <geoform>map</geoform>
+            <serinfo>
+              <sername>MBARI digital data series</sername>
+              <issue>No. 1</issue>
+            </serinfo>
+            <pubinfo>
+              <pubplace/>
+              <publish>Monterey Bay Aquarium Research Institute</publish>
+            </pubinfo>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>This dataset is a land mask polygon representing coverage of the Montery Bay region. This layer was created from the Coastline (DNC_APPR.shp) and Harbor Coastline (DNC_HARB.shp) data extracted from NOAA Raster Navigational Chart #18685: "United States--West Coast, California, Monterey Bay (1992)." Shapefiles for this layer are available in WGS84 and UTM Zone 10 (NAD83) projections as well as in Generic Mapping Tools (GMT) format. This layer is part of the GIS Data of the Monterey Bay collection, a compilation of data and imagery of the Monterey Bay area, including coastline, imagery, and bathymetry.</abstract>
+      <purpose>This dataset is intended for researchers, students, and policy makers for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production, or to provide a basemap to support graphical overlays and analysis with other spatial data.  This collection of data provides documented layers of of the Monterey Bay to persons/institutions of interest throughout the research and educational communities.
+
+</purpose>
+      <supplinf>All data are registered to the WGS84 datum with two versions of each feature, image, and grid coverage included in the collection. One is in a Geographic (decimal degrees) coordinate system and the second is in a Universal Transverse Mercator (UTM) zone 10 projection. A GMT version of this layer is also available.
+
+For strict accuracy and hard-copy production requiring feature, grid, and/or image data, the UTM projection coverages should be used. In fact, some ArcView functions will not be available unless the data are displayed in a projection. This is because a Geographic Coordinate System is NOT a projection but rather a spherical coordinate system dealing directly in latitude and longitude.  However, at the scale of maps covering Monterey Bay, the errors produced by ignoring this fact are small.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>19920725</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>source date</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Unknown</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-122.430206</westbc>
+        <eastbc>-118.715889</eastbc>
+        <northbc>37.412140</northbc>
+        <southbc>35.867966</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>lcsh</themekt>
+        <themekey>Coasts</themekey>
+        <themekey>Harbors</themekey>
+      </theme>
+      <theme>
+        <themekt>ISO 19115 Topic Categories</themekt>
+        <themekey>imageryBaseMapsEarthCover</themekey>
+        <themekey>inlandWaters</themekey>
+      </theme>
+      <place>
+        <placekt>geonames</placekt>
+        <placekey>Monterey Bay (Calif.)</placekey>
+        <placekey>Monterey Harbor (Calif.)</placekey>
+        <placekey>Santa Cruz (Calif.)</placekey>
+        <placekey>Santa Cruz Small Craft Harbor</placekey>
+        <placekey>Moss Landing Harbor (Calif.)</placekey>
+      </place>
+      <temporal>
+        <tempkt>None</tempkt>
+        <tempkey>1992</tempkey>
+      </temporal>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>Users are not permitted to make any commercial use of the data, to sell, assign, sublicense, or otherwise transfer the data or to remove any copyright notice, without prior written permission from MBARI. The data have not been designed as a navigational aid, and you are not permitted to use them for this purpose. In addition, you are not permitted to use MBARI's name or itsinitials (a registered trademark) or to suggest that MBARI endorses your project or product, without its express written consent.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Monterey Bay Aquarium Research Institute</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing</addrtype>
+          <address>P.O. Box 628</address>
+          <address>7700 Sandholdt Road</address>
+          <city>Moss Landing</city>
+          <state>California</state>
+          <postal>95039-0628</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>831-775-1700</cntvoice>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Hatcher, G. (1998). Coastline Coverage of Monterey Bay, Monterey Harbor, Moss Landing Harbor, Santa Cruz, and Small Craft Harbor, California, 1992. Monterey Bay Aquarium Research Institute.</datacred>
+    <native>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.1.0.3035</native>
+  </idinfo>
+  <dataqual>
+    <posacc>
+      <horizpa>
+        <horizpar>These data have been rectified to a horizontal accuracy of within +/- 100 meters for the Monterey Bay region and +/- 500 meters otherwise.</horizpar>
+      </horizpa>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>The coastline data from the approach chart was inserted into the coastline data of the West Coast general chart, then arcs were digitized on screen to create one huge polygon by closing off dangling nodes and adding the edge arcs to close the polygon.
+</procdesc>
+        <srcused>Coastline of Santa Cruz, Moss Landing, and Monterey Bay, California, 1992</srcused>
+        <srcused>Harbor Coastline of Santa Cruz, Moss Landing, and Monterey Bay, California, 1992</srcused>
+        <proccont>
+          <cntinfo>
+            <cntperp>
+              <cntper>Hatcher, Gerry</cntper>
+            </cntperp>
+          </cntinfo>
+        </proccont>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <spdoinfo>
+    <direct>Vector</direct>
+    <ptvctinf>
+      <sdtsterm>
+        <sdtstype>GT-polygon composed of chains</sdtstype>
+        <ptvctcnt>9</ptvctcnt>
+      </sdtsterm>
+    </ptvctinf>
+  </spdoinfo>
+  <eainfo>
+    <detailed xmlns="">
+      <enttyp>
+        <enttypl>LANDMASK</enttypl>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>Esri</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry.</attrdef>
+        <attrdefs>Esri</attrdefs>
+        <attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>AREA</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>PERIMETER</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>MASK_</attrlabl>
+      </attr>
+      <attr>
+        <attrlabl>MASK_ID</attrlabl>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Stanford Geospatial Center</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>physical</addrtype>
+          <address>Branner Earth Sciences Library</address>
+          <address>Mitchell Building, 2nd Floor</address>
+          <address>397 Panama Mall</address>
+          <city>Stanford</city>
+          <state>California</state>
+          <postal>94305</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>650-723-2746</cntvoice>
+        <cntemail>brannerlibrary@stanford.edu</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Users are not permitted to make any commercial use of the data, to sell, assign, sublicense, or otherwise transfer the data or to remove any copyright notice, without prior written permission from MBARI. The data have not been designed as a navigational aid, and you are not permitted to use them for this purpose. In addition, you are not permitted to use MBARI's name or itsinitials (a registered trademark) or to suggest that MBARI endorses your project or product, without its express written consent.</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20140220</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>Stanford Geospatial Center</cntorg>
+        </cntorgp>
+        <cntpos>Metadata Analyst</cntpos>
+        <cntaddr>
+          <addrtype>physical</addrtype>
+          <address>Branner Earth Sciences Library</address>
+          <address>Mitchell Building, 2nd Floor</address>
+          <address>397 Panama Mall</address>
+          <city>Stanford</city>
+          <state>California</state>
+          <postal>94305</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>650-723-2746</cntvoice>
+        <cntemail>brannerlibrary@stanford.edu</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+    <mettc>local time</mettc>
+  </metainfo>
+</metadata>
