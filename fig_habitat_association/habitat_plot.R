@@ -12,7 +12,7 @@
 here::i_am("fig_habitat_association/habitat_plot.R")
 library(here)
 folder <- "fig_habitat_association"
-file_name <- "habitat_plot.R"
+file_name <- "habitat_plot"
 
 ##### PACKAGES, DATA #####
 library(ggplot2)
@@ -38,9 +38,13 @@ kelp_panel <- ggplot(aes(x = percent_rock*100, y = video_macro_individuals),
   geom_point(size = 3, alpha = 0.7, pch = 21, fill = kelp_col) + 
   # geom_point(color = ifelse(small_rock_data$video_macro_individuals > 0, 
   #                           "black", "darkgray")) +
-  theme(plot.title = element_text(face = "italic")) +
+  # theme(plot.title = element_text(face = "italic")) +
+  # labs(title = "Macrocystis pyrifera") + 
+  geom_text(aes(x = -Inf, y = Inf, label = "A"), 
+            hjust = -0.5, #right - left shifting (more - = farther right)
+            vjust = 1.5, size = 5, fontface = "bold") +
   expand_limits(x = 0, y = 0) + 
-  labs(title = "Macrocystis pyrifera", x = "Percentage of transect with rocky substratum", 
+  labs(x = "Rocky substratum (%)", 
        y = expression(Total~count ~ (per ~ 60 ~ m^2)))
 
 kelp_panel
@@ -49,14 +53,21 @@ kelp_panel
 star_panel <- ggplot(aes(x = percent_rock*100, y = video_patiria_min_counts), 
                      data = small_rock_data) +
   geom_point(size = 3, alpha = 0.7, pch = 21, fill = pati_col) + 
-  theme(plot.title = element_text(face = "italic")) +
+  # geom_point(color = ifelse(small_rock_data$video_macro_individuals > 0, 
+  #                           "black", "darkgray")) +
+  # theme(plot.title = element_text(face = "italic")) +
+  # labs(title = "Patiria miniata") + 
+  geom_text(aes(x = -Inf, y = Inf, label = "B"), 
+            hjust = -0.5, #right - left shifting (more - = farther right)
+            vjust = 1.5, size = 5, fontface = "bold") +
   expand_limits(x = 0, y = 0) + 
-  labs(title = "Patiria miniata", x = "Percentage of transect with rocky substratum", 
+  labs(x = "Rocky substratum (%)", 
        y = expression(Total~count ~ (per ~ 60 ~ m^2)))
 
+star_panel
+
 # combine kelp and star panels into one figure using the patchwork package
-kelp_panel + star_panel + plot_layout(axes = "collect") + 
-  plot_annotation(tag_levels = 'A')
+kelp_panel + star_panel + plot_layout(axes = "collect") 
 
 ggsave(paste(folder, "/figs/", file_name, "_a.pdf", sep = ""), height = 3.5, width = 7)
 ggsave(paste(folder, "/figs/", file_name, "_a.jpg", sep = ""), height = 3.5, width = 7)

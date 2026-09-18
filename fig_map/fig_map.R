@@ -11,7 +11,6 @@ file_name <- "fig_map"
 ##-----------------------------------------------------Load libraries---------
 library(tidyverse)
 library(sf)
-library(ggpubr)
 source(here("R", "ggplot_settings.R"))
 
 ##-----------------------------------------------------Load data set-----------

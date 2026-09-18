@@ -14,13 +14,13 @@ To recreate figures, run the code in the specified folder.
 
 Figure 2: fig_map
 
-Figure 3: fig_groundtruth
+Figure 3: fig_insitu_video (groundtruthing kelp and stars)
 
 Figure 4: fig_urchin_class_exercise
 
 Figure 5: fig_habitat_association
 
-Figure S3: fig_stipes
+Figure S3: fig_kelp_observer_comparison
 
 Figure S4: fig_mds
 
