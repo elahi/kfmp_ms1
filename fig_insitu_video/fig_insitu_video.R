@@ -21,10 +21,16 @@ df_fig3_kelpstars_combined <- read.csv(here("data", "KFMP_df_KelpStars_insitu_vi
 df_select_kelp_data <- df_fig3_kelpstars_combined %>%
   select(insitu_macro_stipes_count, video_macro_stipes_count) %>%
   mutate(group = "Macrocystis Stipe Counts")
+
 df_select_star_data <- df_fig3_kelpstars_combined %>%
   select(patiria_adjusted, patiria_min_vid) %>%
   rename(insitu_count = patiria_adjusted, video_count = patiria_min_vid) %>%
   mutate(group = "Patiria Counts (Adjusted)")
+
+# Multiply star data by 4 (for 60m2)
+df_select_star_data <- df_select_star_data |> 
+  mutate(insitu_count = insitu_count * 4, 
+         video_count = video_count * 4)
 
 df_fig3_select_combined_data <- bind_rows(
   df_select_kelp_data %>% 
@@ -82,8 +88,8 @@ ggplot(df_fig3_select_combined_data,
                            "#FF5000"), #Patiria color
              shape = 21, size = 3, alpha = 0.7) + #opacity
   facet_wrap(~ group, scales = "free") +
-  labs(x = expression(italic("In situ") ~ "counts"),
-       y = "Video counts") +
+  labs(x = expression(italic("In situ") ~ "count" ~ (per ~ 60 ~ m^2)),
+       y = expression(Video~count ~ (per ~ 60 ~ m^2))) +
   scale_color_manual(values = c("Macrocystis Stipe Counts" = "#636B2F",
                                 "Patiria Counts (Adjusted)" = "#FF5000")) +
   #plot a and b labels
@@ -97,7 +103,6 @@ ggplot(df_fig3_select_combined_data,
     inherit.aes = FALSE,
     size = 5, fontface = "bold") +
   theme(legend.position = "none", strip.text = element_blank()) #hide titles
-
 
 ##-----------------------------------------------------Save plot----------------
 ggsave(paste(folder, "/figs/", file_name, "_a.pdf", sep = ""), height = 3.5, width = 7)

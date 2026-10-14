@@ -15,14 +15,18 @@ folder <- "fig_habitat_association"
 file_name <- "habitat_plot"
 
 ##### PACKAGES, DATA #####
-library(ggplot2)
+library(tidyverse)
 library(readxl)
 library(patchwork)
 
 source(here("R", "ggplot_settings.R")) # loads kelp and patiria fill colors
 
 # Load raw data #
-rock_data <- read_excel(here("data", "habitat_association_data_260910.xlsx"), na = "NA")
+rock_data <- read_excel(here("data", "habitat_association_data_260910.xlsx"), na = "NA") 
+
+# Multiple patiria counts by 4 to scale up to 60m2 (to match kelp)
+rock_data <- rock_data |> 
+  mutate(video_patiria_min_counts = video_patiria_min_counts*4)
 
 ##### WRANGLE DATA #####
 
@@ -45,7 +49,7 @@ kelp_panel <- ggplot(aes(x = percent_rock*100, y = video_macro_individuals),
             vjust = 1.5, size = 5, fontface = "bold") +
   expand_limits(x = 0, y = 0) + 
   labs(x = "Rocky substratum (%)", 
-       y = expression(Total~count ~ (per ~ 60 ~ m^2)))
+       y = expression(Video~count ~ (per ~ 60 ~ m^2)))
 
 kelp_panel
 
@@ -62,7 +66,7 @@ star_panel <- ggplot(aes(x = percent_rock*100, y = video_patiria_min_counts),
             vjust = 1.5, size = 5, fontface = "bold") +
   expand_limits(x = 0, y = 0) + 
   labs(x = "Rocky substratum (%)", 
-       y = expression(Total~count ~ (per ~ 60 ~ m^2)))
+       y = expression(Video~count ~ (per ~ 60 ~ m^2)))
 
 star_panel
 
@@ -73,6 +77,23 @@ ggsave(paste(folder, "/figs/", file_name, "_a.pdf", sep = ""), height = 3.5, wid
 ggsave(paste(folder, "/figs/", file_name, "_a.jpg", sep = ""), height = 3.5, width = 7)
 
 ##### STATISTICAL ANALYSIS #####
+
+# Summary stats
+small_rock_data |> 
+  summarise(across(
+    where(is.numeric),
+    list(
+      mean = ~ mean(.x, na.rm = TRUE),
+      sd   = ~ sd(.x, na.rm = TRUE),
+      se   = ~ sd(.x, na.rm = TRUE) / sqrt(sum(!is.na(.x)))
+  ))
+  ) %>%
+  pivot_longer(
+    everything(),
+    names_to = c("variable", ".value"),
+    names_pattern = "^(.*)_(mean|sd|se)$"
+  )
+
 # Correlation for each panel
 cor.test(x = small_rock_data$percent_rock, y = small_rock_data$video_macro_individuals)
 summary(lm(small_rock_data$video_macro_individuals 
@@ -85,3 +106,4 @@ summary(lm(small_rock_data$video_patiria_min_counts
 # Exclue 0 kelp transects (all caused by urchins? not confirmed; do not use)
 summary(lm(no_barren_data$video_macro_individuals 
            ~ no_barren_data$percent_rock)) 
+

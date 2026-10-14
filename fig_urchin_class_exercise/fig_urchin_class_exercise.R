@@ -61,13 +61,13 @@ df_summary |>
               method = "lm", color = "gray20", linewidth = 0.5) + 
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", linewidth = 0.5) +
   geom_errorbar(aes(ymin = mean - sd, ymax = mean + sd), width = 0) + 
-  geom_point(alpha = 1, size = 2) +
+  geom_point(alpha = 0.7, size = 3) +
   scale_fill_manual(values = urchin_cols) + 
   scale_shape_manual(values = c(21, 22)) +
   guides(fill = guide_legend(override.aes = list(shape = 21)), 
          shape = guide_legend(override.aes = list(fill = "gray"))) +
   theme(legend.key = element_rect(fill = NA)) +
-  labs(x = "Expert count", y = "Mean student count")
+  labs(x = "Expert count", y = "Student count")
 
 ggsave(paste(folder, "/figs/", file_name, "_a.pdf", sep = ""), height = 3, width = 4)
 ggsave(paste(folder, "/figs/", file_name, "_a.jpg", sep = ""), height = 3, width = 4)

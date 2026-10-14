@@ -50,7 +50,7 @@ ggplot() +
           color = "grey40", linewidth = 0.4) +
   #site points
   geom_point(data = df_fig2_DIMESsites_noshale,
-             aes(longitude, latitude), fill = pati_col, 
+             aes(longitude, latitude), fill = "deepskyblue", 
              shape = 21, size = 2.5, alpha = 0.6) +
   #star label for HMS
   geom_point(data = star_hms,
