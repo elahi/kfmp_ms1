@@ -4,9 +4,9 @@ This repository contains the data and code to recreate the analyses and figures 
 
 *Kelp beds in classrooms: democratizing underwater video surveys for ocean science education*
 
-Authors: 
+Authors: Robin Elahi, Julia DiCicco, Gwendolyn Z. Donahue, Madeline Duda, Christopher Garsha, Stella Gaydek, Maya H. Green, William M. Johnson, Jayde F. Meng, Kersten Schnurle
 
-Submitted to: 
+Submitted to: Oceanography
 
 ## Figures and corresponding folders
 
